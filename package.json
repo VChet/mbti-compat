@@ -1,0 +1,47 @@
+{
+  "name": "mbti-compat",
+  "type": "module",
+  "version": "0.0.0",
+  "license": "AGPL-3.0-or-later",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "npx nolyfill",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint:ts": "vue-tsc --noEmit",
+    "lint:js": "eslint .",
+    "lint:js:fix": "npm run lint:js -- --fix",
+    "lint:css": "stylelint **/*{.scss,.vue}",
+    "lint:css:fix": "npm run lint:css -- --fix",
+    "lint:all": "npm run lint:ts && npm run lint:js && npm run lint:css"
+  },
+  "dependencies": {
+    "@phosphor-icons/vue": "^2.2.1",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vueuse/core": "^13.6.0",
+    "nanoid": "^5.1.5",
+    "vite": "^7.0.6",
+    "vue": "^3.5.18"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^5.2.0",
+    "@stylistic/stylelint-plugin": "^4.0.0",
+    "@total-typescript/ts-reset": "^0.6.1",
+    "@types/node": "^24.2.0",
+    "@types/semver": "^7.7.0",
+    "eslint": "^9.32.0",
+    "postcss-html": "^1.8.0",
+    "postcss-scss": "^4.0.9",
+    "sass-embedded": "^1.90.0",
+    "stylelint": "^16.23.0",
+    "stylelint-config-recess-order": "^7.1.0",
+    "stylelint-config-standard-scss": "^15.0.1",
+    "stylelint-declaration-block-no-ignored-properties": "^2.8.0",
+    "stylelint-order": "^7.0.0",
+    "stylelint-rem-over-px": "^1.0.2",
+    "type-fest": "^4.41.0",
+    "typescript": "^5.9.2",
+    "vue-tsc": "^3.0.5"
+  }
+}
