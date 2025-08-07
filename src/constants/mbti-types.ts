@@ -20,3 +20,7 @@ export const MBTI_TYPES: { value: MBTIType, name: string, color: MBTITypeColor }
   { value: "ISTJ", name: "ISTJ (Logistician)", color: "#4298b4" },
   { value: "ISTP", name: "ISTP (Virtuoso)", color: "#e4ae3a" }
 ];
+
+export const MBTI_TYPE_COLORS: Map<MBTIType, MBTITypeColor> = new Map(
+  MBTI_TYPES.map(({ value, color }) => [value, color])
+);

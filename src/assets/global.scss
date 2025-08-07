@@ -67,11 +67,6 @@ fieldset {
   margin: 0;
   border: 1px solid var(--base-dimmed);
   border-radius: var(--radius);
-  &:has(input, textarea):hover,
-  &:has(input, textarea):focus-within {
-    color: var(--base);
-    border-color: var(--base);
-  }
   ol {
     margin: 0 0 1rem 1.5rem;
   }

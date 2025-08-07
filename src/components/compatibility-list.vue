@@ -23,19 +23,11 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { PhTrash } from "@phosphor-icons/vue";
-import { COMPATIBILITY_MAP, COMPATIBILITY_WEIGHTS, CompatibilityWeight } from "@/constants/compatibility";
-import { MBTI_TYPES } from "@/constants/mbti-types";
+import { COMPATIBILITY_MAP, CompatibilityWeight } from "@/constants/compatibility";
+import { getColor, getWeight } from "@/helpers/compatibility";
 import { useUsersStore, type User } from "@/store/users";
-import type { MBTIType } from "@/types";
 
 const { BAD, OKAY, GOOD, IDEAL } = CompatibilityWeight;
-
-function getWeight(typeA: MBTIType | null, typeB: MBTIType | null): CompatibilityWeight {
-  return COMPATIBILITY_WEIGHTS[`${typeA}-${typeB}`];
-}
-function getColor(type: MBTIType): string {
-  return MBTI_TYPES.find(({ value }) => value === type)!.color;
-}
 
 const { currentUser, users, deleteUser } = useUsersStore();
 const data = computed(() => users.value.reduce((acc: Map<CompatibilityWeight, User[]>, user) => {
