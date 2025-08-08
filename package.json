@@ -17,6 +17,7 @@
     "lint:all": "npm run lint:ts && npm run lint:js && npm run lint:css"
   },
   "dependencies": {
+    "@intlify/unplugin-vue-i18n": "^6.0.8",
     "@phosphor-icons/vue": "^2.2.1",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vueuse/core": "^13.6.0",
@@ -24,6 +25,7 @@
     "nanoid": "^5.1.5",
     "vite": "^7.0.6",
     "vue": "^3.5.18",
+    "vue-i18n": "^11.1.11",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {

@@ -1,9 +1,18 @@
 <template>
   <header class="main-header">
-    <div />
+    <button class="main-header__block-button" title="change locale" type="button" @click="changeLocale">
+      <ph-translate />
+      {{ locale }}
+    </button>
   </header>
 </template>
 <script setup lang="ts">
+import { computed } from "vue";
+import { PhTranslate } from "@phosphor-icons/vue";
+import { useSettingsStore } from "@/store/settings";
+
+const { LOCALES, settings, changeLocale } = useSettingsStore();
+const locale = computed(() => LOCALES[settings.value.locale].label);
 </script>
 <style lang="scss">
 .main-header {

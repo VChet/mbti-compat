@@ -1,9 +1,14 @@
 <template>
   <fieldset class="new-user-form">
-    <legend>Add new user</legend>
+    <legend>{{ $t("newUser.legend") }}</legend>
     <form @submit.prevent="createNewUser">
-      <input v-model="form.name" placeholder="Name">
-      <input-select v-model="form.type" :items="MBTI_TYPES" name="type" placeholder="Select MBTI type" />
+      <input v-model="form.name" :placeholder="$t('newUser.namePlaceholder')">
+      <input-select
+        v-model="form.type"
+        :items
+        name="type"
+        :placeholder="$t('newUser.typePlaceholder')"
+      />
       <button type="submit" :disabled="!form.name || !form.type">
         <ph-plus />
       </button>
@@ -11,7 +16,8 @@
   </fieldset>
 </template>
 <script setup lang="ts">
-import { reactive } from "vue";
+import { computed, reactive } from "vue";
+import { useI18n } from "vue-i18n";
 import { PhPlus } from "@phosphor-icons/vue";
 import { nanoid } from "nanoid";
 import { MBTI_TYPES } from "@/constants/mbti-types";
@@ -27,6 +33,9 @@ function createNewUser(): void {
   addUser({ ...form, id: nanoid() });
   Object.assign(form, DEFAULT_FIELDS);
 }
+
+const { t } = useI18n();
+const items = computed(() => MBTI_TYPES.map(({ value, name }) => ({ value, name: t(name) })));
 </script>
 <style lang="scss">
 .new-user-form > form {

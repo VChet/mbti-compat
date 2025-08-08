@@ -2,7 +2,7 @@
   <ul class="compatibility-list">
     <li v-for="[weight, userData] in data.entries()" :key="weight" class="compatibility-list__group">
       <div class="compatibility-list__group-title" :style="{ backgroundColor: COMPATIBILITY_MAP[weight].color }">
-        {{ COMPATIBILITY_MAP[weight].text }}
+        {{ $t(COMPATIBILITY_MAP[weight].text) }}
       </div>
       <ul>
         <li v-for="user in userData" :key="user.id" class="compatibility-list__user">

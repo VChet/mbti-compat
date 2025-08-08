@@ -1,5 +1,6 @@
 import type { LayoutOptions, StylesheetJson, StylesheetJsonBlock } from "cytoscape";
-import { COMPATIBILITY_MAP } from "./compatibility";
+import { getTypedKeys } from "@/helpers/object";
+import { COMPATIBILITY_MAP, CompatibilityWeight } from "./compatibility";
 import { MBTI_TYPES } from "./mbti-types";
 
 const nodeBorders: StylesheetJsonBlock[] = MBTI_TYPES.map(({ value, color }) => ({
@@ -7,9 +8,9 @@ const nodeBorders: StylesheetJsonBlock[] = MBTI_TYPES.map(({ value, color }) => 
   style: { "border-color": color }
 }));
 
-const edgeLineColors: StylesheetJsonBlock[] = Object.values(COMPATIBILITY_MAP).map(({ text, color }) => ({
-  selector: `edge.${text.toLowerCase()}`,
-  style: { "line-color": color }
+const edgeLineColors: StylesheetJsonBlock[] = getTypedKeys(COMPATIBILITY_MAP).map((weight) => ({
+  selector: `edge.${CompatibilityWeight[weight].toLowerCase()}`,
+  style: { "line-color": COMPATIBILITY_MAP[weight].color }
 }));
 
 export const CYTOSCAPE_STYLE: StylesheetJson = [

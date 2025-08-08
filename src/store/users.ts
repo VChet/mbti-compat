@@ -1,5 +1,5 @@
 import { computed } from "vue";
-import { createSharedComposable, useLocalStorage } from "@vueuse/core";
+import { createGlobalState, useLocalStorage } from "@vueuse/core";
 import { nanoid } from "nanoid";
 import type { MBTIType } from "@/types";
 
@@ -18,7 +18,7 @@ const DEFAULT_STORE: UsersStore = {
   users: []
 };
 
-export const useUsersStore = createSharedComposable(() => {
+export const useUsersStore = createGlobalState(() => {
   const storage = useLocalStorage<UsersStore>("users", DEFAULT_STORE, { mergeDefaults: true });
   const currentUser = computed({
     get: () => storage.value.currentUser,

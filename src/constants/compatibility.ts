@@ -290,8 +290,8 @@ interface CompatibilityData {
   color: CSSProperties["color"]
 }
 export const COMPATIBILITY_MAP: Record<CompatibilityWeight, CompatibilityData> = Object.freeze({
-  [BAD]: { text: "Bad", color: "#e74c3c" },
-  [OKAY]: { text: "Okay", color: "#f39c12" },
-  [GOOD]: { text: "Good", color: "#2ecc71" },
-  [IDEAL]: { text: "Ideal", color: "#12b0bb" }
+  [BAD]: { text: "compatibility.bad", color: "#e74c3c" },
+  [OKAY]: { text: "compatibility.okay", color: "#f39c12" },
+  [GOOD]: { text: "compatibility.good", color: "#2ecc71" },
+  [IDEAL]: { text: "compatibility.ideal", color: "#12b0bb" }
 });
