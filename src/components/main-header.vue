@@ -4,14 +4,18 @@
       <ph-translate />
       {{ locale }}
     </button>
+    <button v-if="needRefresh" type="button" @click.prevent="updateServiceWorker(true)">
+      <ph-warning-circle />
+      Update app
+    </button>
   </header>
 </template>
 <script setup lang="ts">
 import { computed } from "vue";
-import { PhTranslate } from "@phosphor-icons/vue";
+import { PhTranslate, PhWarningCircle } from "@phosphor-icons/vue";
 import { useSettingsStore } from "@/store/settings";
 
-const { LOCALES, settings, changeLocale } = useSettingsStore();
+const { LOCALES, settings, changeLocale, needRefresh, updateServiceWorker } = useSettingsStore();
 const locale = computed(() => LOCALES[settings.value.locale].label);
 </script>
 <style lang="scss">

@@ -1,4 +1,5 @@
 import { createGlobalState, useLocalStorage } from "@vueuse/core";
+import { useRegisterSW } from "virtual:pwa-register/vue";
 import { i18n } from "@/plugins/i18n";
 
 type LocaleCode = "en" | "ru";
@@ -15,6 +16,8 @@ export const useSettingsStore = createGlobalState(() => {
   const settings = useLocalStorage<SettingsStore>("settings", {
     locale: "en"
   }, { mergeDefaults: true });
+
+  const { needRefresh, updateServiceWorker } = useRegisterSW({ immediate: true });
 
   function initLocale(): void {
     i18n.global.locale.value = settings.value.locale;
@@ -34,6 +37,8 @@ export const useSettingsStore = createGlobalState(() => {
     LOCALES,
     settings,
     initLocale,
-    changeLocale
+    changeLocale,
+    needRefresh,
+    updateServiceWorker
   };
 });

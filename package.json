@@ -2,6 +2,7 @@
   "name": "mbti-compat",
   "type": "module",
   "version": "0.0.0",
+  "description": "A service for analyzing MBTI personality compatibility in the form of a convenient list and interactive graph. Add people, select their personality types, and quickly assess the quality of relationships on a color scale — from poor to ideal",
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -24,6 +25,7 @@
     "cytoscape": "^3.33.0",
     "nanoid": "^5.1.5",
     "vite": "^7.0.6",
+    "vite-plugin-pwa": "^1.0.2",
     "vue": "^3.5.18",
     "vue-i18n": "^11.1.11",
     "vue-router": "^4.5.1"
@@ -46,6 +48,19 @@
     "stylelint-rem-over-px": "^1.0.2",
     "type-fest": "^4.41.0",
     "typescript": "^5.9.2",
-    "vue-tsc": "^3.0.5"
+    "vue-tsc": "^3.0.5",
+    "workbox-build": "^7.3.0",
+    "workbox-core": "^7.3.0",
+    "workbox-precaching": "^7.3.0",
+    "workbox-routing": "^7.3.0",
+    "workbox-strategies": "^7.3.0",
+    "workbox-window": "^7.3.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "is-core-module": "npm:@nolyfill/is-core-module@^1",
+      "safe-buffer": "npm:@nolyfill/safe-buffer@^1",
+      "string.prototype.matchall": "npm:@nolyfill/string.prototype.matchall@^1"
+    }
   }
 }
