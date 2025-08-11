@@ -20,6 +20,9 @@
         </tbody>
       </table>
     </div>
+    <div class="table-view__disclaimer">
+      {{ $t('table.disclaimer') }}
+    </div>
   </section>
 </template>
 <script setup lang="ts">
@@ -47,19 +50,27 @@ const tableItems = computed(() => {
   overflow: hidden;
   &__wrapper {
     overflow: auto;
+    table {
+      width: 100%;
+      overflow: auto;
+      text-align: center;
+      border-collapse: collapse;
+      th, td {
+        padding-block: .5rem;
+      }
+      td:not(:first-child) {
+        font-size: .75rem;
+        color: var(--background);
+      }
+    }
   }
-  table {
-    width: 100%;
-    overflow: auto;
-    text-align: center;
-    border-collapse: collapse;
-    th, td {
-      padding-block: .5rem;
-    }
-    td:not(:first-child) {
-      font-size: .75rem;
-      color: var(--background);
-    }
+  &__disclaimer {
+    padding: 1rem;
+    margin-top: 1rem;
+    color: #004085;
+    background-color: #cfe2ff;
+    border: 1px solid #b6d4fe;
+    border-radius: var(--radius);
   }
 }
 </style>

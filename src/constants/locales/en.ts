@@ -29,6 +29,9 @@ export default {
     ISTJ: "ISTJ (Logistician)",
     ISTP: "ISTP (Virtuoso)"
   },
+  table: {
+    disclaimer: "⚠️ This table is based on popular theories about MBTI type compatibility and has no scientific basis. Actual compatibility depends on many personal factors and may differ significantly from the estimates provided."
+  },
   currentUser: {
     legend: "Enter your data",
     namePlaceholder: "Name",
