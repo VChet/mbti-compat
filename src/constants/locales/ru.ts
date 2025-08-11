@@ -41,5 +41,8 @@ export default {
     legend: "Добавить новую запись",
     namePlaceholder: "Имя",
     typePlaceholder: "Выберите тип MBTI"
+  },
+  header: {
+    updateApp: "Обновить приложение"
   }
 };

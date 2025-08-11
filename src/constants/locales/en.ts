@@ -41,5 +41,8 @@ export default {
     legend: "Add new entry",
     namePlaceholder: "Name",
     typePlaceholder: "Select MBTI type"
+  },
+  header: {
+    updateApp: "Update app"
   }
 };

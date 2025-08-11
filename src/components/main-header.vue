@@ -4,9 +4,14 @@
       <ph-translate />
       {{ locale }}
     </button>
-    <button v-if="needRefresh" type="button" @click.prevent="updateServiceWorker(true)">
+    <button
+      v-if="needRefresh"
+      class="main-header__block-button"
+      type="button"
+      @click.prevent="updateServiceWorker(true)"
+    >
       <ph-warning-circle />
-      Update app
+      {{ $t("header.updateApp") }}
     </button>
   </header>
 </template>
