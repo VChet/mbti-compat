@@ -12,7 +12,7 @@ import { RouterView, useRouter } from "vue-router";
 import MainHeader from "@/components/main-header.vue";
 import TabSelector from "@/components/tab-selector.vue";
 
-type Tab = "List" | "Graph";
+type Tab = "List" | "Graph" | "Table";
 
 const { t } = useI18n();
 const router = useRouter();
@@ -21,7 +21,8 @@ const isTabRoute = (name: string): name is Tab => pages.value.includes(name);
 
 const tabs = computed<{ value: Tab, text: string }[]>(() => [
   { value: "List", text: t("router.list") },
-  { value: "Graph", text: t("router.graph") }
+  { value: "Graph", text: t("router.graph") },
+  { value: "Table", text: t("router.table") }
 ]);
 
 const selectedTab = computed<Tab>({

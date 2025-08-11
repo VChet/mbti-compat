@@ -5,6 +5,7 @@ import { i18n } from "./i18n";
 const HomeView = () => import("@/pages/HomeView.vue");
 const ListView = () => import("@/pages/ListView.vue");
 const GraphView = () => import("@/pages/GraphView.vue");
+const TableView = () => import("@/pages/TableView.vue");
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,7 +17,8 @@ const router = createRouter({
       redirect: { name: "List" },
       children: [
         { name: "List", path: "/list", component: ListView, meta: { titleToken: "router.list" } },
-        { name: "Graph", path: "/graph", component: GraphView, meta: { titleToken: "router.graph" } }
+        { name: "Graph", path: "/graph", component: GraphView, meta: { titleToken: "router.graph" } },
+        { name: "Table", path: "/table", component: TableView, meta: { titleToken: "router.table" } }
       ]
     },
     {

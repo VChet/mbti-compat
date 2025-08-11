@@ -2,7 +2,8 @@ export default {
   router: {
     title: "MBTI Compatibility",
     list: "List",
-    graph: "Graph"
+    graph: "Graph",
+    table: "Table"
   },
   compatibility: {
     bad: "Bad",

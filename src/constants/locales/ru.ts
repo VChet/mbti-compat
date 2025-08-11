@@ -2,7 +2,8 @@ export default {
   router: {
     title: "MBTI Совместимость",
     list: "Список",
-    graph: "Граф"
+    graph: "Граф",
+    table: "Таблица"
   },
   compatibility: {
     bad: "Плохая",
