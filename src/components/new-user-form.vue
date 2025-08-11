@@ -35,7 +35,7 @@ function createNewUser(): void {
 }
 
 const { t } = useI18n();
-const items = computed(() => MBTI_TYPES.map(({ value, name }) => ({ value, name: t(name) })));
+const items = computed(() => MBTI_TYPES.map(({ value }) => ({ value, name: t(`MBTI.${value}`) })));
 </script>
 <style lang="scss">
 .new-user-form > form {

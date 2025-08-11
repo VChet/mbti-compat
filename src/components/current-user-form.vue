@@ -20,7 +20,7 @@ import InputSelect from "@/components/input-select.vue";
 const { currentUser } = useUsersStore();
 
 const { t } = useI18n();
-const items = computed(() => MBTI_TYPES.map(({ value, name }) => ({ value, name: t(name) })));
+const items = computed(() => MBTI_TYPES.map(({ value }) => ({ value, name: t(`MBTI.${value}`) })));
 </script>
 <style lang="scss">
 .current-user-form {
