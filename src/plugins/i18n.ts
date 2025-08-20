@@ -6,5 +6,6 @@ export const i18n = createI18n({
   locale: "en",
   fallbackLocale: "ru",
   legacy: false,
+  globalInjection: true,
   messages: { en, ru }
 });
